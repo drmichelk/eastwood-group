@@ -1386,7 +1386,6 @@ section { position: relative; }
   min-height: 560px;
   position: relative;
 }
-@media (min-width: 900px) { .mtx-schematic .sch-body { grid-template-columns: 260px 1fr 260px; } }
 @media (min-width: 1200px) { .mtx-schematic .sch-body { grid-template-columns: 300px 1fr 300px; } }
 
 .sch-side {
@@ -1396,9 +1395,9 @@ section { position: relative; }
   flex-direction: column;
   gap: 1rem;
 }
-@media (max-width: 899px) { .sch-side { border-right: none; border-bottom: var(--rule); } }
+@media (max-width: 1199px) { .sch-side { border-right: none; border-bottom: var(--rule); } }
 .sch-side.right { border-right: none; border-left: var(--rule); }
-@media (max-width: 899px) { .sch-side.right { border-left: none; border-top: var(--rule); } }
+@media (max-width: 1199px) { .sch-side.right { border-left: none; border-top: var(--rule); } }
 
 .sch-side .grp { display: flex; flex-direction: column; gap: 0.5rem; padding-bottom: 1rem; border-bottom: var(--rule); }
 .sch-side .grp:last-child { border-bottom: none; padding-bottom: 0; }
@@ -3089,10 +3088,19 @@ section { position: relative; }
 
         <div class="campus-row" data-campus="montreux" data-tz="Europe/Zurich">
           <div>
-            <div class="cr-name">Eastwood Montreux International</div>
+            <div class="cr-name">Eastwood Montreux International School</div>
             <div class="cr-loc">Switzerland · IB · Boarding &amp; Day</div>
           </div>
           <span class="cr-status open">Sept 26</span>
+          <span class="cr-time" data-tz="Europe/Zurich">—<small>Montreux</small></span>
+        </div>
+
+        <div class="campus-row" data-campus="global" data-tz="Europe/Zurich">
+          <div>
+            <div class="cr-name">Eastwood Global Online</div>
+            <div class="cr-loc">Worldwide · Hybrid IBDP · 35 countries</div>
+          </div>
+          <span class="cr-status live">Live</span>
           <span class="cr-time" data-tz="Europe/Zurich">—<small>Montreux</small></span>
         </div>
 
@@ -3105,15 +3113,6 @@ section { position: relative; }
           <span class="cr-time" data-tz="Asia/Beirut">—<small>Beirut</small></span>
         </div>
 
-        <div class="campus-row" data-campus="kafarshima" data-tz="Asia/Beirut">
-          <div>
-            <div class="cr-name">Eastwood College Kafarshima</div>
-            <div class="cr-loc">Lebanon · IB · American HS · Day</div>
-          </div>
-          <span class="cr-status live">Live</span>
-          <span class="cr-time" data-tz="Asia/Beirut">—<small>Kafarshima</small></span>
-        </div>
-
         <div class="campus-row" data-campus="nova" data-tz="Asia/Beirut">
           <div>
             <div class="cr-name">Eastwood Nova</div>
@@ -3123,22 +3122,22 @@ section { position: relative; }
           <span class="cr-time" data-tz="Asia/Beirut">—<small>Beirut</small></span>
         </div>
 
+        <div class="campus-row" data-campus="kafarshima" data-tz="Asia/Beirut">
+          <div>
+            <div class="cr-name">Eastwood College Kafarshima</div>
+            <div class="cr-loc">Lebanon · IB · American HS · Day</div>
+          </div>
+          <span class="cr-status live">Live</span>
+          <span class="cr-time" data-tz="Asia/Beirut">—<small>Kafarshima</small></span>
+        </div>
+
         <div class="campus-row" data-campus="erbil" data-tz="Asia/Baghdad">
           <div>
-            <div class="cr-name">Eastwood International School</div>
+            <div class="cr-name">Eastwood Erbil International School</div>
             <div class="cr-loc">Erbil, Iraq · IB · American HS</div>
           </div>
           <span class="cr-status live">Live</span>
           <span class="cr-time" data-tz="Asia/Baghdad">—<small>Erbil</small></span>
-        </div>
-
-        <div class="campus-row" data-campus="jeddah" data-tz="Asia/Riyadh">
-          <div>
-            <div class="cr-name">Eastwood International School</div>
-            <div class="cr-loc">Jeddah, KSA · IB · IGCSE · A-Level</div>
-          </div>
-          <span class="cr-status live">Live</span>
-          <span class="cr-time" data-tz="Asia/Riyadh">—<small>Jeddah</small></span>
         </div>
 
         <div class="campus-row" data-campus="lagos" data-tz="Africa/Lagos">
@@ -3150,20 +3149,28 @@ section { position: relative; }
           <span class="cr-time" data-tz="Africa/Lagos">—<small>Lagos</small></span>
         </div>
 
-        <div class="campus-row" data-campus="global" data-tz="Europe/Zurich">
+        <div class="campus-row" data-campus="jeddah" data-tz="Asia/Riyadh">
           <div>
-            <div class="cr-name">Eastwood Global Online</div>
-            <div class="cr-loc">Worldwide · Hybrid IBDP · 35 countries</div>
+            <div class="cr-name">Eastwood Jeddah International School</div>
+            <div class="cr-loc">Jeddah, KSA · IB · IGCSE · A-Level</div>
           </div>
           <span class="cr-status live">Live</span>
-          <span class="cr-time" data-tz="Europe/Zurich">—<small>Montreux</small></span>
+          <span class="cr-time" data-tz="Asia/Riyadh">—<small>Jeddah</small></span>
         </div>
 
-        <!-- Pipeline -->
+        <div class="campus-row" data-campus="luanda" data-tz="Africa/Luanda">
+          <div>
+            <div class="cr-name">Luanda Mandate</div>
+            <div class="cr-loc">Angola · Build and Management · Final MOU</div>
+          </div>
+          <span class="cr-status pipe">MOU</span>
+          <span class="cr-time" data-tz="Africa/Luanda">—<small>Luanda</small></span>
+        </div>
+
         <div class="campus-row" data-campus="athens" data-tz="Europe/Athens">
           <div>
             <div class="cr-name">Athens Project</div>
-            <div class="cr-loc">Greece · Management mandate · Bid</div>
+            <div class="cr-loc">Greece · Build and Management mandate · Bid</div>
           </div>
           <span class="cr-status pipe">Bid</span>
           <span class="cr-time" data-tz="Europe/Athens">—<small>Athens</small></span>
@@ -3176,15 +3183,6 @@ section { position: relative; }
           </div>
           <span class="cr-status pipe">RFP</span>
           <span class="cr-time" data-tz="Asia/Dubai">—<small>RAK</small></span>
-        </div>
-
-        <div class="campus-row" data-campus="luanda" data-tz="Africa/Luanda">
-          <div>
-            <div class="cr-name">Luanda Mandate</div>
-            <div class="cr-loc">Angola · Management · Final MOU</div>
-          </div>
-          <span class="cr-status pipe">MOU</span>
-          <span class="cr-time" data-tz="Africa/Luanda">—<small>Luanda</small></span>
         </div>
       </div>
     </div>
@@ -3244,122 +3242,77 @@ section { position: relative; }
           <span class="sch-corner bl">DRAWN · MONTREUX STUDIO</span>
           <span class="sch-corner br">REV 4 · APR 2026</span>
 
-          <svg viewBox="0 0 900 600" preserveAspectRatio="xMidYMid meet" id="mtx-topo" style="max-width:900px">
+          <svg viewBox="0 0 900 620" preserveAspectRatio="xMidYMid meet" id="mtx-topo" style="max-width:900px" role="img" aria-label="Eastwood Montreux campus overview diagram">
             <defs>
               <radialGradient id="mtx-halo" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="var(--alpine)" stop-opacity="0.20"/>
-                <stop offset="55%" stop-color="var(--alpine)" stop-opacity="0.05"/>
+                <stop offset="0%" stop-color="var(--alpine)" stop-opacity="0.16"/>
+                <stop offset="60%" stop-color="var(--alpine)" stop-opacity="0.04"/>
                 <stop offset="100%" stop-color="var(--alpine)" stop-opacity="0"/>
               </radialGradient>
-              <linearGradient id="mtx-stream" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="var(--alpine)" stop-opacity="0"/>
-                <stop offset="50%" stop-color="var(--alpine)" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="var(--alpine)" stop-opacity="0"/>
-              </linearGradient>
             </defs>
 
-            <!-- Topo rings -->
-            <g fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8">
-              <circle cx="450" cy="300" r="260"/>
-              <circle cx="450" cy="300" r="200"/>
-              <circle cx="450" cy="300" r="140"/>
+            <text x="450" y="42" text-anchor="middle" font-family="var(--f-mono)" font-size="15" fill="var(--mute)" letter-spacing="5">CAMPUS AT A GLANCE</text>
+
+            <circle cx="450" cy="310" r="150" fill="url(#mtx-halo)"/>
+            <circle cx="450" cy="310" r="118" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+
+            <g stroke="rgba(1,182,201,0.35)" stroke-width="1.2">
+              <line x1="346" y1="150" x2="415" y2="235"/>
+              <line x1="554" y1="150" x2="485" y2="235"/>
+              <line x1="284" y1="310" x2="332" y2="310"/>
+              <line x1="616" y1="310" x2="568" y2="310"/>
+              <line x1="346" y1="470" x2="415" y2="385"/>
+              <line x1="554" y1="470" x2="485" y2="385"/>
             </g>
-
-            <!-- Cross axes, faint -->
-            <line x1="40" y1="300" x2="860" y2="300" stroke="rgba(255,255,255,0.1)" stroke-width="0.6" stroke-dasharray="2 5"/>
-            <line x1="450" y1="40" x2="450" y2="560" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" stroke-dasharray="2 5"/>
-
-            <!-- Coordinate ticks -->
-            <g font-family="var(--f-mono)" font-size="11" fill="var(--mute-2)" letter-spacing="2">
-              <text x="48" y="294">46.433°N</text>
-              <text x="790" y="294">6.912°E</text>
-              <text x="454" y="56">ELEV 390M</text>
-              <text x="454" y="580">LAC LÉMAN</text>
-            </g>
-
-            <!-- Halo behind castle -->
-            <circle cx="450" cy="300" r="180" fill="url(#mtx-halo)"/>
-
-            <!-- Connecting spokes to outer nodes -->
-            <g stroke-width="1.2" fill="none">
-              <path class="mtx-stream" d="M 450 300 L 160 160"/>
-              <path class="mtx-stream" d="M 450 300 L 740 160"/>
-              <path class="mtx-stream" d="M 450 300 L 160 440"/>
-              <path class="mtx-stream" d="M 450 300 L 740 440"/>
-              <path class="mtx-stream" d="M 450 300 L 450 80"/>
-              <path class="mtx-stream" d="M 450 300 L 450 520"/>
-            </g>
-
-            <!-- Central node: Castle / core -->
-            <g>
-              <circle cx="450" cy="300" r="72" fill="var(--ink-2)" stroke="var(--alpine)" stroke-width="1.4"/>
-              <circle cx="450" cy="300" r="58" fill="none" stroke="rgba(0,224,176,0.35)" stroke-width="0.8" stroke-dasharray="1 3"/>
-              <!-- castle icon -->
-              <g transform="translate(450 300)" stroke="var(--alpine)" stroke-width="1.6" fill="none">
-                <path d="M -26 14 L -26 -8 L -18 -8 L -18 -16 L -10 -16 L -10 -8 L -4 -8 L -4 -20 L 4 -20 L 4 -8 L 10 -8 L 10 -16 L 18 -16 L 18 -8 L 26 -8 L 26 14 Z"/>
-                <line x1="-26" y1="0" x2="26" y2="0"/>
-              </g>
-              <text x="450" y="366" text-anchor="middle" font-family="var(--f-mono)" font-weight="600" font-size="13" fill="var(--paper)" letter-spacing="2">EASTWOOD MONTREUX</text>
-              <text x="450" y="384" text-anchor="middle" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.5">CORE · SEPT 2026</text>
-            </g>
-
-            <!-- Outer nodes: 6 clearly-labeled plates -->
-            <!-- Node: IB -->
-            <g>
-              <rect x="90" y="124" width="140" height="72" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="105" y="148" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">CURRICULUM</text>
-              <text x="105" y="172" font-family="var(--f-display)" font-style="italic" font-size="26" fill="var(--alpine)">IB DP</text>
-              <text x="105" y="188" font-family="var(--f-mono)" font-size="9" fill="var(--paper-dim)" letter-spacing="1">+ AI ENGINE</text>
-            </g>
-
-            <!-- Node: Boarding -->
-            <g>
-              <rect x="670" y="124" width="140" height="72" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="685" y="148" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">CAPACITY</text>
-              <text x="685" y="174" font-family="var(--f-display)" font-style="italic" font-size="26" fill="var(--paper)">920</text>
-              <text x="732" y="174" font-family="var(--f-mono)" font-size="10" fill="var(--mute)">SEATS</text>
-              <text x="685" y="188" font-family="var(--f-mono)" font-size="9" fill="var(--paper-dim)" letter-spacing="1">120 DAY · 800 BRD</text>
-            </g>
-
-            <!-- Node: STEM lab / observatory (top) -->
-            <g>
-              <rect x="380" y="40" width="140" height="56" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="395" y="62" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">STEM · LAB</text>
-              <text x="395" y="84" font-family="var(--f-display)" font-style="italic" font-size="22" fill="var(--alpine)">Observatory</text>
-            </g>
-
-            <!-- Node: Grand Hall (bottom) -->
-            <g>
-              <rect x="380" y="520" width="140" height="56" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="395" y="542" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">HERITAGE · 1872</text>
-              <text x="395" y="564" font-family="var(--f-display)" font-style="italic" font-size="22" fill="var(--paper)">Grand Hall</text>
-            </g>
-
-            <!-- Node: Library arts (left bottom) -->
-            <g>
-              <rect x="90" y="404" width="140" height="72" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="105" y="428" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">ARTS · LIBRARY</text>
-              <text x="105" y="452" font-family="var(--f-display)" font-style="italic" font-size="22" fill="var(--paper)">Atelier</text>
-              <text x="105" y="468" font-family="var(--f-mono)" font-size="9" fill="var(--paper-dim)" letter-spacing="1">40K VOLUMES</text>
-            </g>
-
-            <!-- Node: Network uplink (right bottom) -->
-            <g>
-              <rect x="670" y="404" width="140" height="72" rx="2" fill="var(--ink-2)" stroke="var(--line-2)"/>
-              <text x="685" y="428" font-family="var(--f-mono)" font-size="10" fill="var(--mute)" letter-spacing="1.8">UPLINK</text>
-              <text x="685" y="454" font-family="var(--f-display)" font-style="italic" font-size="22" fill="var(--alpine)">8+ nodes</text>
-              <text x="685" y="468" font-family="var(--f-mono)" font-size="9" fill="var(--paper-dim)" letter-spacing="1">EASTWOOD NET</text>
-            </g>
-
-            <!-- Small connector dots where spokes meet the nodes -->
             <g fill="var(--alpine)">
-              <circle cx="230" cy="160" r="2.4"/>
-              <circle cx="670" cy="160" r="2.4"/>
-              <circle cx="230" cy="440" r="2.4"/>
-              <circle cx="670" cy="440" r="2.4"/>
-              <circle cx="450" cy="96" r="2.4"/>
-              <circle cx="450" cy="520" r="2.4"/>
+              <circle cx="415" cy="235" r="2.4"/><circle cx="485" cy="235" r="2.4"/>
+              <circle cx="332" cy="310" r="2.4"/><circle cx="568" cy="310" r="2.4"/>
+              <circle cx="415" cy="385" r="2.4"/><circle cx="485" cy="385" r="2.4"/>
             </g>
+
+            <g>
+              <circle cx="450" cy="310" r="86" fill="var(--ink-2)" stroke="var(--alpine)" stroke-width="1.4"/>
+              <g transform="translate(450 286)" stroke="var(--alpine)" stroke-width="1.7" fill="none">
+                <path d="M -26 14 L -26 -8 L -18 -8 L -18 -16 L -10 -16 L -10 -8 L -4 -8 L -4 -20 L 4 -20 L 4 -8 L 10 -8 L 10 -16 L 18 -16 L 18 -8 L 26 -8 L 26 14 Z"/>
+              </g>
+              <text x="450" y="327" text-anchor="middle" font-family="var(--f-mono)" font-weight="600" font-size="15" fill="var(--paper)" letter-spacing="1.5">EASTWOOD</text>
+              <text x="450" y="347" text-anchor="middle" font-family="var(--f-mono)" font-weight="600" font-size="15" fill="var(--paper)" letter-spacing="1.5">MONTREUX</text>
+              <text x="450" y="366" text-anchor="middle" font-family="var(--f-mono)" font-size="11" fill="var(--mute)" letter-spacing="1.5">OPENS SEPT 2026</text>
+            </g>
+
+            <!-- Six fact plates -->
+            <g>
+              <rect x="110" y="78" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="128" y="107" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">CURRICULUM</text>
+              <text x="128" y="140" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--alpine)">IB DP + IGCSE</text>
+            </g>
+            <g>
+              <rect x="554" y="78" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="572" y="107" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">CAPACITY · 13–18</text>
+              <text x="572" y="140" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--paper)">200 students</text>
+            </g>
+            <g>
+              <rect x="48" y="272" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="66" y="301" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">HERITAGE · 1872</text>
+              <text x="66" y="334" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--paper)">Castle campus</text>
+            </g>
+            <g>
+              <rect x="616" y="272" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="634" y="301" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">FORMAT</text>
+              <text x="634" y="334" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--alpine)">Boarding + day</text>
+            </g>
+            <g>
+              <rect x="110" y="466" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="128" y="495" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">LOCATION</text>
+              <text x="128" y="528" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--paper)">Lac Léman · CH</text>
+            </g>
+            <g>
+              <rect x="554" y="466" width="236" height="76" rx="3" fill="var(--ink-2)" stroke="var(--line-2)"/>
+              <text x="572" y="495" font-family="var(--f-mono)" font-size="14" fill="var(--mute)" letter-spacing="1.5">EASTWOOD NETWORK</text>
+              <text x="572" y="528" font-family="var(--f-display)" font-style="italic" font-size="27" fill="var(--alpine)">8+ campuses</text>
+            </g>
+
+            <text x="450" y="596" text-anchor="middle" font-family="var(--f-mono)" font-size="12" fill="var(--mute-2)" letter-spacing="2.5">46.433°N · 6.912°E · ELEV 390M · LAC LÉMAN</text>
           </svg>
         </div>
 
@@ -4097,9 +4050,9 @@ section { position: relative; }
         <p>Every partner conversation starts with Joe — investor relations, deal structure, and the data room are his desk. No forms, no funnels.</p>
       </div>
       <div class="cc-actions">
-        <a href="mailto:partners@eastwood.schools?subject=Partner%20inquiry" class="btn btn-primary">Email Joe directly <span class="arrow">→</span></a>
+        <a href="/cdn-cgi/l/email-protection#fd8d9c8f8993988f8ebd989c8e898a929299d38e9e959292918ec28e889f97989e89c0ad9c8f8993988fd8cfcd94938c88948f84" class="btn btn-primary">Email Joe directly <span class="arrow">→</span></a>
         <a href="Investor One-Pager.html" target="_blank" rel="noopener" class="btn btn-outline">One-page brief <span class="arrow">↓</span></a>
-        <span class="cc-meta mono">PARTNERS@EASTWOOD.SCHOOLS · REPLIES WITHIN 48H</span>
+        <span class="cc-meta mono"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4f4e5f6f0eae1f6f7e4e1e5f7f0f3ebebe08af7e7ecebebe8f7">[email&#160;protected]</a> · REPLIES WITHIN 48H</span>
       </div>
     </div>
   </div>
@@ -4225,7 +4178,7 @@ section { position: relative; }
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "alpine",
   "density": "default",
@@ -4332,29 +4285,30 @@ const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
     montreux: {
       name: 'Eastwood Montreux', country: 'Switzerland',
       status: 'Opening Sept 2026', statusCls: 'open',
-      lede: 'The first Swiss campus. Restored 19th-century castle on Lake Geneva. Full IB Continuum, boarding & day.',
-      kv: [['Ages','3–18'],['Format','Day + Boarding'],['Capacity','660'],['Languages','6'],['Coord.','46.43° N · 6.91° E'],['Open','September 2026']],
-      highlights: [['Programs','IB PYP · MYP · DP'],['Boarding beds','180'],['Faculty ratio','1 : 8'],['Partners','Juventus · Harvard GSE']],
+      lede: 'The first Swiss campus. Restored 19th-century castle on Lac Leman. Full IB DP and IGCSE, boarding & day.',
+      kv: [['Ages','13–18'],['Format','Day + Boarding'],['Capacity','200'],['Languages','8'],['Coord.','46.43° N · 6.91° E'],['Open','September 2026']],
+      highlights: [['Programs','IGCSE · DP'],['Boarding beds','180'],['Faculty ratio','1 : 8'],['Partners','Juventus · Columbia University']],
     },
     beirut: {
       name: 'Eastwood International', country: 'Beirut, Lebanon',
       status: 'Operating · IB', statusCls: 'live',
       lede: 'Flagship IB day school. One of the top IB results in the Middle East for the last decade.',
-      kv: [['Ages','3–18'],['Format','Day'],['Students','~950'],['Founded','1973'],['Diploma avg','38.4'],['Pass rate','100%']],
-      highlights: [['Cambridge IGCSE','Yes'],['IB Diploma','Yes'],['Language','EN · AR · FR']],
+      kv: [['Ages','3–18'],['Format','Day'],['Students','~420'],['Founded','1973'],['Diploma avg','38.4'],['Pass rate','100%']],
+      highlights: [['IB Continuum School · PYP · MYP · DP','Yes'],['IB Diploma','Yes'],['Language','EN · AR · FR']],
     },
     kafarshima: {
       name: 'Eastwood College Kafarshima', country: 'Mount Lebanon',
       status: 'Operating', statusCls: 'live',
       lede: 'IB + American High School stream. Sister campus to Eastwood Beirut with shared curriculum spine.',
-      kv: [['Ages','6–18'],['Format','Day'],['Students','~720'],['Founded','2004'],['Diploma avg','37.8'],['Pass rate','100%']],
+      kv: [['Ages','6–18'],['Format','Day'],['Students','~720'],['Founded','1973'],['Diploma avg','37.8'],['Pass rate','100%']],
+      highlightsLabel: 'Ranked 2 nationally in Lebanese exam results',
       highlights: [['IB Diploma','Yes'],['American HS','Yes'],['Language','EN · AR']],
     },
     nova: {
       name: 'Eastwood Nova', country: 'Beirut, Lebanon',
-      status: 'Opening Sept 2026 · Boarding', statusCls: 'open',
+      status: 'Opening Sept 2027 · Boarding', statusCls: 'open',
       lede: 'New-build flagship integrating day school, regional boarding, and Juventus Academy in one campus.',
-      kv: [['Ages','3–18'],['Format','Day + Boarding'],['Capacity','820'],['Open','September 2026'],['Partner','Juventus Academy']],
+      kv: [['Ages','3–18'],['Format','Day + Boarding'],['Capacity','820'],['Open','September 2027'],['Partner','AUB · BY Ventures']],
       highlights: [['IB Continuum','Yes'],['Boarding','Regional'],['Sport','Juventus on-site']],
     },
     erbil: {
@@ -4382,7 +4336,7 @@ const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
       name: 'Eastwood Global Online', country: 'Worldwide',
       status: 'Operating · 35 countries', statusCls: 'live',
       lede: 'One of only seven schools globally licensed to deliver the full IB Diploma online. Live, teacher-led.',
-      kv: [['Cohort','420'],['Countries','35+'],['Diploma avg','38.9'],['Certification','T4 Gold']],
+      kv: [['Cohort','170'],['Countries','35+'],['Diploma avg','38.9'],['Certification','T4 Gold']],
       highlights: [['Format','Fully online · live'],['Dual timetable','Yes'],['Acceptance','~24%']],
     },
     athens: {
@@ -4573,7 +4527,7 @@ const TWEAKS_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="md-kv">
         ${meta.kv.map(([k,v])=>`<div class="c"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')}
       </div>
-      <span class="md-h">Highlights</span>
+      <span class="md-h">${meta.highlightsLabel || 'Highlights'}</span>
       <ul class="md-list">
         ${meta.highlights.map(([k,v])=>`<li><span>${k}</span><strong>${v}</strong></li>`).join('')}
       </ul>
