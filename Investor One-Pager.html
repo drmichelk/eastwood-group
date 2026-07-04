@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eastwood Schools Group — Investor Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+doc-page:not(:defined){visibility:hidden}
+:root {
+  --deep: #000077;
+  --deep-2: #1A1F5C;
+  --steel: #7897B6;
+  --turq: #017A88;
+  --turq-bright: #01B6C9;
+  --rose: #8E4F64;
+  --ink: #0B0D24;
+  --dim: #4A5570;
+  --line: rgba(0,0,119,0.14);
+  --cream: #F7F7F2;
+  --f-display: 'Instrument Serif', Georgia, serif;
+  --f-sans: 'Geist', -apple-system, sans-serif;
+  --f-mono: 'Geist Mono', monospace;
+}
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: var(--f-sans); color: var(--ink); font-size: 9pt; line-height: 1.4; }
+.mono { font-family: var(--f-mono); }
+
+/* ===== FULL-BLEED MASTHEAD ===== */
+.mast {
+  margin: -0.55in -0.55in 0;
+  background: var(--deep);
+  background: linear-gradient(120deg, #000060 0%, var(--deep) 55%, #0E1468 100%);
+  color: #F4F4EF;
+  padding: 0.28in 0.55in 0.24in;
+  position: relative;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.mast::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(120,151,182,0.25) 1px, transparent 1px);
+  background-size: 14px 14px;
+  mask-image: linear-gradient(100deg, transparent 55%, #000 100%);
+  -webkit-mask-image: linear-gradient(100deg, transparent 55%, #000 100%);
+  pointer-events: none;
+}
+.mast-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; position: relative; z-index: 1; }
+.mast-top img { height: 30px; width: auto; filter: brightness(0) invert(1); }
+.mast-tag { font-family: var(--f-mono); font-size: 7pt; letter-spacing: 0.24em; text-transform: uppercase; border: 1px solid rgba(244,244,239,0.4); padding: 5px 10px; border-radius: 2px; }
+.mast h1 { font-family: var(--f-display); font-weight: 400; font-size: 21pt; letter-spacing: -0.01em; line-height: 1.02; margin: 0 0 6px; position: relative; z-index: 1; }
+.mast h1 em { font-style: italic; color: var(--turq-bright); }
+.mast p { font-size: 8.6pt; color: rgba(244,244,239,0.75); max-width: 74ch; margin: 0; position: relative; z-index: 1; }
+.mast-meta { display: flex; gap: 20px; margin-top: 10px; font-family: var(--f-mono); font-size: 6.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); position: relative; z-index: 1; }
+.mast-meta strong { color: #F4F4EF; font-weight: 500; }
+
+/* ===== STAT BAND ===== */
+.stats { margin: 0 -0.55in; background: var(--cream); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); break-inside: avoid; }
+.stats > div { padding: 9px 0 9px 0.28in; border-right: 1px solid var(--line); }
+.stats > div:first-child { padding-left: 0.55in; }
+.stats > div:last-child { border-right: none; }
+.st-v { font-family: var(--f-display); font-size: 16pt; line-height: 1; color: var(--deep); display: block; margin-bottom: 4px; }
+.st-v em { font-style: italic; color: var(--turq); }
+.st-k { font-family: var(--f-mono); font-size: 6.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); line-height: 1.55; display: block; padding-right: 10px; }
+
+/* ===== BODY ===== */
+.body-cols { display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; margin-top: 10px; }
+h2 { font-family: var(--f-mono); font-weight: 600; font-size: 6.6pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--deep); margin: 9px 0 5px; display: flex; align-items: center; gap: 8px; }
+h2::before { content: ''; width: 14px; height: 2px; background: var(--turq-bright); }
+h2:first-child { margin-top: 0; }
+
+ul.why { margin: 0; padding: 0; list-style: none; }
+ul.why li { margin-bottom: 4px; font-size: 8pt; padding-left: 13px; position: relative; line-height: 1.4; }
+ul.why li::before { content: '■'; position: absolute; left: 0; top: 1px; font-size: 5pt; color: var(--turq-bright); }
+ul.why strong { color: var(--deep); }
+
+/* growth chart */
+.chart-card { border: 1px solid var(--line); background: #fff; padding: 7px 10px 6px; break-inside: avoid; margin-bottom: 2px; }
+.chart-card .ch-h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.chart-card .ch-t { font-family: var(--f-mono); font-size: 6.4pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.chart-card .ch-v { font-family: var(--f-display); font-size: 11pt; color: var(--deep); }
+.chart-card .ch-v em { font-style: italic; color: var(--turq); }
+.chart-card svg { width: 100%; height: 44px; display: block; }
+
+/* network table */
+.net { width: 100%; border-collapse: collapse; font-size: 7.6pt; break-inside: avoid; }
+.net th { font-family: var(--f-mono); font-size: 6.2pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); text-align: left; padding: 4px 8px; border-bottom: 1.5px solid var(--deep); }
+.net td { padding: 3px 8px; border-bottom: 1px solid var(--line); }
+.net tr:nth-child(even) td { background: var(--cream); }
+.net .st { font-family: var(--f-mono); font-size: 6.2pt; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.net .st::before { content: '●'; margin-right: 5px; font-size: 6pt; }
+.st.live { color: var(--turq); }
+.st.open { color: var(--rose); }
+.st.pipe { color: var(--steel); }
+
+.accred { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+.accred span { font-family: var(--f-mono); font-size: 6pt; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line); padding: 3px 7px; color: var(--dim); background: #fff; }
+.accred span strong { color: var(--deep); }
+
+/* ===== MODELS ===== */
+.models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; break-inside: avoid; margin-top: 2px; }
+.model { border: 1px solid var(--line); background: #fff; break-inside: avoid; }
+.model .m-head { background: var(--deep); color: #F4F4EF; padding: 4px 10px; font-family: var(--f-mono); font-size: 6.4pt; letter-spacing: 0.16em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: baseline; }
+.model .m-head .n { color: var(--turq-bright); }
+.model .m-body { padding: 6px 10px 7px; }
+.model h3 { font-family: var(--f-display); font-weight: 400; font-size: 11pt; margin: 0 0 2px; line-height: 1.1; }
+.model h3 em { font-style: italic; color: var(--turq); }
+.model p { font-size: 7.4pt; color: var(--dim); margin: 0; line-height: 1.4; }
+.model .tk { font-family: var(--f-mono); font-size: 6.4pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); border-top: 1px solid var(--line); padding-top: 6px; display: block; }
+.model .tk strong { font-size: 8.5pt; letter-spacing: 0.02em; }
+
+/* ===== PROCESS RIBBON ===== */
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); background: #fff; break-inside: avoid; margin-top: 8px; }
+.process > div { padding: 5px 10px; border-right: 1px solid var(--line); position: relative; }
+.process > div:last-child { border-right: none; }
+.process .p-n { font-family: var(--f-mono); font-size: 6.2pt; letter-spacing: 0.14em; color: var(--turq); display: block; margin-bottom: 2px; }
+.process .p-t { font-family: var(--f-display); font-size: 10.5pt; color: var(--ink); display: block; }
+.process .p-w { font-family: var(--f-mono); font-size: 6pt; letter-spacing: 0.1em; color: var(--dim); text-transform: uppercase; }
+
+/* ===== FOOTER BAND ===== */
+.foot {
+  margin: 10px -0.55in -0.55in;
+  background: var(--deep);
+  color: #F4F4EF;
+  padding: 0.14in 0.55in 0.16in;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  break-inside: avoid;
+}
+.foot .f-cta { font-size: 8pt; line-height: 1.45; max-width: 62ch; }
+.foot .f-cta strong { color: var(--turq-bright); }
+.foot .f-addr { font-family: var(--f-mono); font-size: 6.4pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--steel); text-align: right; line-height: 1.8; white-space: nowrap; }
+.foot .f-addr strong { color: #F4F4EF; }
+
+.print-hint { position: fixed; top: 14px; right: 14px; z-index: 50; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.08em; background: var(--deep); color: #fff; border: none; padding: 9px 14px; border-radius: 3px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,60,0.3); }
+.print-hint:hover { background: var(--deep-2); }
+@media print { .print-hint { display: none; } }
+</style>
+</head>
+<body>
+<button class="print-hint" onclick="window.print()">PRINT / SAVE AS PDF</button>
+
+<doc-page size="a4" margin="0.55in">
+
+  <!-- MASTHEAD -->
+  <div class="mast">
+    <div class="mast-top">
+      <img src="assets/logo/eastwood-nav.png" alt="Eastwood Schools">
+      <span class="mast-tag">Investor Brief · Confidential</span>
+    </div>
+    <h1>The operating system<br><em>for future schools.</em></h1>
+    <p>Eastwood Schools Group — est. 1973, anchored in Montreux, Switzerland — builds and operates high-performance international schools across Europe, the Middle East, and Africa, and shares the upside with the partners who own them.</p>
+    <div class="mast-meta">
+      <span><strong>EST</strong> 1973</span>
+      <span><strong>8</strong> SCHOOLS LIVE</span>
+      <span><strong>6</strong> COUNTRIES</span>
+      <span><strong>35</strong> MARKETS ONLINE</span>
+      <span><strong>3</strong> MANDATES IN PIPELINE</span>
+    </div>
+  </div>
+
+  <!-- STAT BAND -->
+  <div class="stats">
+    <div><span class="st-v">+74<em>%</em></span><span class="st-k">Avg. annual revenue growth · managed partner schools (3-yr)</span></div>
+    <div><span class="st-v">100<em>%</em></span><span class="st-k">IB Diploma pass rate · 38.1 avg vs 31.74 global</span></div>
+    <div><span class="st-v">2,400<em>+</em></span><span class="st-k">Students enrolled · 19× growth since founding</span></div>
+    <div><span class="st-v">$40<em>M+</em></span><span class="st-k">CapEx deployed in campuses, labs &amp; facilities</span></div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-cols">
+    <div>
+      <h2>Why Eastwood wins</h2>
+      <ul class="why">
+        <li><strong>One stack, every campus.</strong> AI curriculum engine, teacher platform, admissions, and governance ship pre-deployed — a new school opens at year-eight maturity on day one.</li>
+        <li><strong>Online IB license.</strong> One of only 7 schools worldwide authorized to deliver the full IB Diploma online — 38.9 average across the online cohort.</li>
+        <li><strong>Aligned economics.</strong> Revenue-share management contracts: Eastwood earns when the partner school grows. Incentives align by construction.</li>
+        <li><strong>Swiss anchor.</strong> Group HQ and castle flagship in Montreux; governance, audit, and safeguarding run to Swiss standard.</li>
+      </ul>
+
+      <h2>Enrollment · 1973 → 2028</h2>
+      <div class="chart-card">
+        <div class="ch-h">
+          <span class="ch-t">Group enrollment · actual + projected</span>
+          <span class="ch-v">3,500<em>+ by 2028</em></span>
+        </div>
+        <svg viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="0" y1="58" x2="300" y2="58" stroke="rgba(0,0,119,0.14)" stroke-width="0.6"/>
+          <line x1="0" y1="32" x2="300" y2="32" stroke="rgba(0,0,119,0.08)" stroke-width="0.6"/>
+          <line x1="0" y1="8"  x2="300" y2="8"  stroke="rgba(0,0,119,0.08)" stroke-width="0.6"/>
+          <path d="M 0 57 L 30 56 L 60 54 L 95 50 L 130 44 L 165 37 L 200 29 L 235 21 L 258 16 L 258 62 L 0 62 Z" fill="rgba(1,122,136,0.12)"/>
+          <path d="M 0 57 L 30 56 L 60 54 L 95 50 L 130 44 L 165 37 L 200 29 L 235 21 L 258 16" fill="none" stroke="#017A88" stroke-width="1.6"/>
+          <path d="M 258 16 L 278 10 L 298 4" fill="none" stroke="#000077" stroke-width="1.4" stroke-dasharray="3 3"/>
+          <circle cx="258" cy="16" r="2.4" fill="#017A88"/>
+          <circle cx="298" cy="4" r="2" fill="#000077"/>
+          <text x="2" y="52" font-family="Geist Mono, monospace" font-size="5.5" fill="#4A5570">1973 · 125</text>
+          <text x="216" y="14" font-family="Geist Mono, monospace" font-size="5.5" fill="#017A88">2026 · 2,400+</text>
+        </svg>
+      </div>
+
+      <h2>R&amp;D pipeline · Eastwood Labs</h2>
+      <ul class="why">
+        <li><strong>IMPACT</strong> — longitudinal student-outcome measurement · live across all campuses.</li>
+        <li><strong>EDGE Protocol</strong> — 11-dimension school assessment · public launch Q3 2026.</li>
+        <li><strong>Forge</strong> — AI-built LMS · −60% teacher admin time · rollout Q1 2027.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Network &amp; pipeline</h2>
+      <table class="net">
+        <thead><tr><th>Campus / mandate</th><th>Market</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Eastwood Montreux · castle flagship</td><td>Switzerland</td><td class="st open">Opens 09·26</td></tr>
+          <tr><td>Beirut · Kafarshima · Nova</td><td>Lebanon</td><td class="st live">Operating</td></tr>
+          <tr><td>Eastwood Erbil</td><td>Iraq</td><td class="st live">Operating</td></tr>
+          <tr><td>Eastwood Jeddah</td><td>Saudi Arabia</td><td class="st live">Operating</td></tr>
+          <tr><td>LIS Lagos</td><td>Nigeria</td><td class="st live">Operating</td></tr>
+          <tr><td>Eastwood Global Online</td><td>35 countries</td><td class="st live">Operating</td></tr>
+          <tr><td>Athens Project</td><td>Greece</td><td class="st pipe">Bid · final</td></tr>
+          <tr><td>Ras Al Khaimah K-12</td><td>UAE</td><td class="st pipe">RFP eval.</td></tr>
+          <tr><td>Luanda Mandate</td><td>Angola</td><td class="st pipe">MOU signing</td></tr>
+        </tbody>
+      </table>
+      <div class="accred">
+        <span><strong>IB</strong> World School</span>
+        <span><strong>Cognia</strong></span>
+        <span><strong>CIS</strong></span>
+        <span><strong>Cambridge</strong> Int'l</span>
+        <span><strong>T4</strong> Gold</span>
+        <span><strong>CH</strong> Swiss-anchored</span>
+      </div>
+
+      <h2>Three ways to build with the group</h2>
+      <div class="models" style="grid-template-columns: 1fr;">
+        <div class="model">
+          <div class="m-head"><span>Option <span class="n">01</span></span><span>Ticket · $5M+</span></div>
+          <div class="m-body">
+            <h3>Invest in a <em>school</em></h3>
+            <p>360° partnership — construction to curriculum to leadership. Eastwood designs, builds, and operates.</p>
+          </div>
+        </div>
+        <div class="model">
+          <div class="m-head"><span>Option <span class="n">02</span></span><span>Revenue-share</span></div>
+          <div class="m-body">
+            <h3>Outsource your <em>school</em></h3>
+            <p>Management contract on the Eastwood stack. +74% avg. revenue growth across managed partners.</p>
+          </div>
+        </div>
+        <div class="model">
+          <div class="m-head"><span>Option <span class="n">03</span></span><span>Per-seat / per-site</span></div>
+          <div class="m-body">
+            <h3>License the <em>curriculum</em></h3>
+            <p>AI-enhanced, IB-aligned framework — regional or per-market. Deployed in 15+ countries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="process">
+    <div><span class="p-n">01 · WEEK 1</span><span class="p-t">Intro call</span><span class="p-w">30 min with leadership</span></div>
+    <div><span class="p-n">02 · WEEKS 2–4</span><span class="p-t">NDA + data room</span><span class="p-w">Financials · outcomes · EDGE audit</span></div>
+    <div><span class="p-n">03 · WEEKS 5–8</span><span class="p-t">Site visit</span><span class="p-w">Live campus · meet partner owners</span></div>
+    <div><span class="p-n">04 · WEEKS 9–12</span><span class="p-t">Term sheet</span><span class="p-w">Structure agreed · build begins</span></div>
+  </div>
+
+  <!-- FOOTER BAND -->
+  <div class="foot">
+    <div class="f-cta">Direct line: <strong>Joe Haddad, Group CFO</strong> · partners@eastwood.schools · replies within 48h. NDA and data room within one week of intro call. Typical intro-to-term-sheet: 90 days.</div>
+    <div class="f-addr"><strong>Eastwood Global</strong><br>Av. de Chillon 57<br>1820 Montreux · Switzerland</div>
+  </div>
+
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>
